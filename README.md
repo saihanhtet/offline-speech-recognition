@@ -9,5 +9,7 @@ cd offlineSpeechRecognition
 
 pip install -r requirements.txt
 
+python demo.py
+
 ```
 Thanks you all. Please Subscribe me! https://www.youtube.com/channel/UCyQ52ouun-gHHGRIZvEEZow
