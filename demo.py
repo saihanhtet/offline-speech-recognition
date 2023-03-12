@@ -3,6 +3,7 @@ import pyaudio
 import wave
 import audioop
 
+
 def record_wav(filepath="audio/output.wav"):
     start = False
     slience_frame = 0
@@ -58,6 +59,7 @@ def recognize(audiofile=None, data=False):
         return result['text'].strip()
 
 
-file = record_wav()
-res = recognize(audiofile=file)
-print(res)
+if __name__ == '__main__':
+    file = record_wav()
+    res = recognize(audiofile=file)
+    print(res)
