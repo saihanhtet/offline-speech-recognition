@@ -3,7 +3,7 @@ import pyaudio
 import wave
 import audioop
 
-def record_wav():
+def record_wav(filepath="audio/output.wav"):
     start = False
     slience_frame = 0
     THRESHOLD = 50
@@ -32,15 +32,14 @@ def record_wav():
     stream.close()
     audio.terminate()
 
-    sound_file = wave.open('output.wav', 'wb')
+    sound_file = wave.open(filepath, 'wb')
     sound_file.setnchannels(1)
     sound_file.setsampwidth(audio.get_sample_size(pyaudio.paInt16))
     sound_file.setframerate(44100)
     sound_file.writeframes(b''.join(frames))
     sound_file.close()
     print('Finished recording.')
-    path = "output.wav"
-    return path
+    return filepath
 
 
 def recognize(audiofile=None, data=False):
